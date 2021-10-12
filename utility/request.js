@@ -1,5 +1,14 @@
 import fetch from 'node-fetch';
 
+function filterContentType(res) {
+  if (res.headers.get('content-type').match('application/json')) {
+    return res.json();
+  }
+  if (res.headers.get('content-type').match('text/plain')) {
+    return res.text();
+  }
+}
+
 async function request(url, type, headers, body = null) {
   const fetchOption = {
     method: type,
@@ -9,13 +18,14 @@ async function request(url, type, headers, body = null) {
     fetchOption.body = body;
   }
   try {
+    console.log(url, fetchOption)
     const res = await fetch(url, fetchOption);
     if (!res.ok) {
       throw new Error(res.status + ' request error');
     }
-    return res.json();
+    return filterContentType(res)
   } catch (error) {
-    console.error(error)
+    throw error
   }
 }
 
