@@ -29,7 +29,8 @@ async function request(url, type, headers, body = null) {
   try {
     const res = await fetch(url, fetchOption);
     if (!res.ok) {
-      throw new Error(res.status + ' request error');
+      const { error } = await res.json();
+      throw new Error(`${res.status} ${error.message}`);
     }
     statusLog(res.status, type)
     return filterContentType(res)
