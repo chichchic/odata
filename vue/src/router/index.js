@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import RequstData from "../views/RequstData.vue";
+import QueryingData from "../views/QueryingData.vue";
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: "/request-data",
     name: "RequstData",
     component: RequstData,
+  },
+  {
+    path: "/querying-data",
+    name: "QueryingData",
+    component: QueryingData,
   },
 ];
 
