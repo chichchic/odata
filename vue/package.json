@@ -9,13 +9,13 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "element-plus": "^1.1.0-beta.20",
+    "element-plus": "1.0.2-beta.28",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
-    "async-validator": "4.0.3",
+    "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
@@ -24,7 +24,10 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-prettier": "^6.0.0",
+    "async-validator": "4.0.3",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-import": "^1.13.3",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.0.0",
